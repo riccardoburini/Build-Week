@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pag3.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <img src="./assets/epicode_logo.png" alt="Logo Epicode">
+    </header>
+
+    <main>
+        <h1>Results</h1>
+        <h4>The summary of your answers:</h4>
+        
+    
+        <div class = "container">
+            <div class = "correctResult">
+                <h2>Correct</h2>
+                <p id="pCorrect"></p>
+                <p id="checkCorrectAnswers"></p>
+            </div>
+            <div class = "countdown"></div>
+            <div class = "wrongResult">
+                <h2>Wrong</h2>
+                <p id = "pWrong"></p>
+                <p id="checkWrongAnswers"></p>
+            </div>
+    
+        </div>
+        <input type="button" value="RATE US" id = "rateUs">
+
+    </main>
+    
+
+    <script>
+        
+        const checkAnswer = (correct, questions) => {
+            let correctAnswers = (correct * 100) / questions
+            let wrongAnswers = 100 - correctAnswers
+            if (correctAnswers >= 60) {
+                let h5 = document.createElement("h5")
+                h5.innerText = "Congratulations!"
+                let h5Blue = document.createElement("h5")
+                h5Blue.innerText = "You passed the exam."
+                h5Blue.style.color = "#00FFFF"
+                h5Blue.style.marginTop = 0
+                let p = document.createElement("p")
+                p.innerText = "We'll send you the certificate in few minutes. Check your email (including promotions / spam folder"
+                let div = document.querySelector(".countdown")
+                div.appendChild(h5)
+                div.appendChild(h5Blue)
+                div.appendChild(p)
+
+                let pResult = document.getElementById("pCorrect")
+                pResult.innerText = (correctAnswers.toFixed(1)) + "%"
+                let pCheckC = document.getElementById("checkCorrectAnswers")
+                pCheckC.innerText = correct + "/" + questions + " questions"
+                //let corrette = document.getElementById("correctResult")
+                //corrette.appendChild(pResult)
+                let pWrong = document.getElementById("pWrong")
+                pWrong.innerText = (wrongAnswers.toFixed(1)) + "%"
+                let pCheckW = document.getElementById("checkWrongAnswers")
+                let totalWrong = questions - correct
+                pCheckW.innerText = totalWrong + "/" + questions + " questions"
+                //let sbagliate = document.getElementById("correctResult")
+                //sbagliate.appendChild(pResult)
+
+                
+
+            }
+        }
+    </script>
+
+</body>
+</html>
