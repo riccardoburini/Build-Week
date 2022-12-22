@@ -100,49 +100,97 @@ const questions = [
 
 let n = 0
 let sum = 0
+const container = document.querySelector('.container');
 
-const ObjList = questions
-
+console.log(questions[0].correct_answer);
+console.log(questions.length);
 function addTask() {
   let questionTitle = document.createElement('p')
-  questionTitle.innerHTML += `<p>${ObjList[n].question}</p>`
+  questionTitle.innerHTML += `<h1>${questions[n].question}</h1>`
   document.querySelector(".container").appendChild(questionTitle);
 }
 addTask()
+
 
 function createQuestions (ans, ans2) {
   let createdQuest = `${ans}${","}${ans2}${" "}`;
   let newQuest = createdQuest.split(",")
   for (let i = 0; i < newQuest.length; i++) {
-    document.querySelector(".container").innerHTML += `<input id="test${i}" type="radio" name="same" ><label for="test${i}" onclick='handleFunction(event)'>${newQuest[i]}</label>`
+    document.querySelector(".container").innerHTML += `<input type="radio" name="same" ><label for="test" id="test" onclick='handleFunction(event)'>${newQuest[i]}</label>`
   }
 }
-createQuestions(ObjList[n].incorrect_answers, ObjList[n].correct_answer);
+createQuestions(questions[n].incorrect_answers, questions[n].correct_answer);
 
-let toStoreSum = String.valueOf(sum)
-let toStoretotalAnswers = String.valueOf(ObjList.length)
+
+function removeNodes (container){
+  while (container.hasChildNodes()) {
+    container.removeChild(container.firstChild);
+  }
+}
+
+function handleFunction(event){
+  if (event.target.innerText === questions[n].correct_answer){sum += 1};
+  n += 1;
+  console.log(n);
+  console.log(sum);
+  localStorage.setItem("sum", sum)
+  localStorage.setItem("max", questions.length)
+  newQuest()
+}
+
+function redirectIfOver() {
+  if (n === questions.length){
+    window.open("//www.google.com")
+  }
+}
+
+function newQuest(){
+  redirectIfOver()
+  removeNodes(container);
+  addTask()
+  createQuestions(questions[n].incorrect_answers, questions[n].correct_answer);
+  where();
+  clearInterval(mytimer)
+  avvia();
+}
+
+
+let timer = 0
+function timerCounter() {
+  timer--;
+  document.getElementById("contatore").innerHTML = timer;
+  if (timer === 0) {
+    ++n
+    newQuest();
+  }
+}
+
+let mytimer
+
+window.onload = () => {where(), avvia()}
+
+function avvia(){
+  mytimer = setInterval(timerCounter, 1000)
+  if (questions[n].difficulty == "easy"){timer = 15}
+  if (questions[n].difficulty == "medium"){timer = 30}
+  if (questions[n].difficulty == "hard"){timer = 60}
+  document.getElementById("contatore").innerHTML = timer
+}
+
+function where() {
+  let bottomp = document.createElement("p")
+  bottomp.innerHTML = `<h3>Question ${n +1} <b> / ${questions.length}<b><h3>`
+  document.querySelector(".container").appendChild(bottomp)
+}
  
-localStorage.setItem("sum", ObjList.length)
-console.log(localStorage.setItem);
-function removeNodes (parent){
-  while (parent.hasChildNodes()) {
-    parent.removeChild(parent.firstChild);
-   }
- }
-const container = document.querySelector('.container');
- 
- function handleFunction(event){
-   n += 1;
-   if (event.target.innerText == ObjList[n].correct_answer){sum += 1};
-   removeNodes(container);
-   addTask()
-   createQuestions(ObjList[n].incorrect_answers, ObjList[n].correct_answer);
-   console.log(n);
-   console.log(sum);
-   localStorage.setItem("sum", sum)
-   localStorage.setItem("max", ObjList.length)
- } 
+document.querySelector("esplosione")
 
-
- 
-
+addEventListener('click', (event) => {
+  let x = event.x
+  let y = event.y
+  var explosion = document.getElementById("esplosione");
+  snowball.style.display = '';
+  snowball.style.position = 'absolute';
+  snowball.style.left = x + 'px';
+  snowball.style.top = y + 'px';
+});
