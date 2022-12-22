@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header>
+        <img src="./assets/epicode_logo.png" alt="Logo Epicode">
+    </header>
+
+    <main>
+        
+            <h1>Welcome to <br /> <b>your exam</b></h1>
+        
+        <h4>Instructions</h4>
+        <p>We don't expect most engineers to know the answers to all of these <br /> question, so dont't worry if ypu're unsure of a few of theme</p>
+        <ul>
+            <li>Each question is <b>timed</b> and can only be <b>answered once</b>.</li>
+            <li>Changing browser tab or opening other windows will <b>invalidate the question</b>.</li>
+            <li>This exam will take approx. <b>0-5 minutes</b>.</li>
+        </ul>
+    </main>
+
+    <footer>
+
+            <!--<img src="./assets/unchecked.png" alt="">-->
+            <div id = "divCheck" onclick="whiteCheckbox()">
+                <input id="cb" type="checkbox" onclick="whiteCheckbox()">
+            </div>
+            <p>I promise to answer myself without help from anyone</p>
+            <input type="button" value="PROCEED" id="procedi" onclick="startTest()">
+        
+            
+        
+    </footer>
+
+    <script>  
+        let checkbox = document.getElementById("cb")
+        let footerDiv = document.getElementById("divCheck")
+        let button = document.getElementById("procedi")
+        const whiteCheckbox = () => {
+            if (checkbox.checked) {
+                //checkbox.onclick(footerDiv.style.backgroundColor = "white")
+                footerDiv.style.backgroundColor = "white"
+            } else {
+                footerDiv.style.backgroundColor = "transparent"
+            }
+        }
+        
+        const startTest = () => {
+            if (checkbox.checked) {
+                button.onclick(location.replace("./secondapagina.html"))
+                
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>
