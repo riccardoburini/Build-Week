@@ -140,7 +140,7 @@ function handleFunction(event){
 
 function redirectIfOver() {
   if (n === questions.length){
-    window.open("//www.google.com")
+    window.location = "google.com"
   }
 }
 
@@ -152,6 +152,7 @@ function newQuest(){
   where();
   clearInterval(mytimer)
   avvia();
+  pepe()
 }
 
 
@@ -164,7 +165,6 @@ function timerCounter() {
     newQuest();
   }
 }
-
 let mytimer
 
 window.onload = () => {where(), avvia()}
@@ -182,15 +182,21 @@ function where() {
   bottomp.innerHTML = `<h3>Question ${n +1} <b> / ${questions.length}<b><h3>`
   document.querySelector(".container").appendChild(bottomp)
 }
- 
-document.querySelector("esplosione")
 
-addEventListener('click', (event) => {
-  let x = event.x
-  let y = event.y
-  var explosion = document.getElementById("esplosione");
-  snowball.style.display = '';
-  snowball.style.position = 'absolute';
-  snowball.style.left = x + 'px';
-  snowball.style.top = y + 'px';
-});
+function setPepeMemes (event) {
+  if (event.key === " ") {
+    document.querySelector("body").style.backgroundImage = "url(./assets/180712-Weill--The-Creator-of-Pepe-hero_uionjj.jpg)";
+    document.querySelector("body").style.color = "red"
+  }
+}
+
+addEventListener('keydown', setPepeMemes);
+
+function unSetPepeMemes (event) {
+  if (event.key === " ") {
+    document.querySelector("body").style.backgroundImage = "";
+    document.querySelector("body").style.color = "white"
+  }
+}
+
+addEventListener('keyup', unSetPepeMemes);
