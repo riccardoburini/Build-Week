@@ -1,0 +1,92 @@
+input[type="radio"] {
+    display:none;   
+}
+
+
+
+body{
+    background-image: url(../assets/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    margin:0;
+    text-align: center;
+    max-height: 100%;
+    font-family: Inter;
+}
+
+header {
+    text-align: left;
+
+}
+img{
+    width: 200px;
+    text-align: left;
+    margin: 50px 0px 0px 50px;
+}
+
+form{
+    display: inline;
+    padding-left: 75%;
+}
+
+.countdown{
+    display: inline-block;
+    width: 70px;
+    border:15px solid #00FFFF;
+    border-radius: 100%;
+    text-align: center;
+}
+
+#contatore{
+    font-size: 20px;
+}
+
+main{
+    margin-top: 5rem;
+    margin: auto;
+    margin-top: 100px;
+    max-width: 1000px;
+}
+
+h1{
+    font-weight: 300;
+    font-family: inter;
+    font-size: 4rem;
+    margin-bottom: 4%
+}
+
+#test {
+    border-radius: 50px;
+    background-color: rgba(100, 100, 100, 0.335);
+    width: 200px;
+    padding: 25px 100px 25px 100px;
+    margin: 30px;
+    white-space: nowrap;
+    display: inline-block;
+    box-shadow: rgba(255, 255, 255, 0.503) -2px -2px 0px;
+    border: 1px solid rgba(255, 255, 255, 0.171);
+}
+
+#test:hover {
+    background: rgb(130,0,96);
+    background: linear-gradient(90deg, rgba(130,0,96,1) 0%, rgba(195,0,142,1) 35%, rgba(130,0,96,1) 100%);
+}
+
+footer {
+    text-align: center;
+}
+h3 {
+    margin-top: 50px;
+    position: fixed;
+    margin-left: 440px; 
+}
+
+b {
+    color:rgb(162, 18, 131) ;
+}
+
+#pepe {
+    margin: 0;
+}
+
