@@ -49,6 +49,7 @@ main{
     margin: auto;
     margin-top: 100px;
     max-width: 1000px;
+    height: 100vh;
 }
 
 h1{
