@@ -7,9 +7,7 @@ body {
   color: white;
   text-align: center;
 }
-html {
-  max-width: 1024px;
-}
+
 .logo {
   width: 15%;
   display: block;
@@ -38,6 +36,7 @@ p {
   font-size: 1.7rem;
   font-family: outfit;
   margin-top: 0;
+  margin-bottom: 0;
 }
 main {
   margin-left: 10%;
@@ -60,4 +59,11 @@ main {
 }
 footer {
   margin-top: 8%;
+}
+.stars img {
+  margin-right: 1%;
+}
+.stars {
+  margin-bottom: 9%;
+  margin-top: 3%;
 }
