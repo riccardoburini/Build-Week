@@ -163,7 +163,6 @@ function newQuest(){
   where();
   clearInterval(mytimer)
   avvia();
-  pepe()
 }
 
 
@@ -211,3 +210,5 @@ function unSetPepeMemes (event) {
 }
 
 addEventListener('keyup', unSetPepeMemes);
+
+
