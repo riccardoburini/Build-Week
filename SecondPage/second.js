@@ -131,7 +131,7 @@ console.log(sum);
 
 function createQuestions (ans) {
   for (let i = 0; i < ans.length; i++) {
-    document.querySelector(".container").innerHTML += `<input id="test${i}" type="radio" name="same" ><label for="test${i}" onclick='handleFunction(event)'>${ans[i]}</label>`
+      document.querySelector(".container").innerHTML += `<input type="radio" id="test${[i]}" name="same"><label for="test${[i]}">${ans[i]}</label>`
   }
 }
 createQuestions(possibleAnswers[0]);
