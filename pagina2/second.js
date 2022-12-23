@@ -111,10 +111,21 @@ function addTask() {
 }
 addTask()
 
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = a[i];
+      a[i] = a[j];
+      a[j] = temp;
+  }
+  return a;
+}
+shuffle(newQuest)
 
 function createQuestions (ans, ans2) {
   let createdQuest = `${ans}${","}${ans2}${" "}`;
   let newQuest = createdQuest.split(",")
+  shuffle(newQuest)
   for (let i = 0; i < newQuest.length; i++) {
     document.querySelector(".container").innerHTML += `<input type="radio" name="same" ><label for="test" id="test" onclick='handleFunction(event)'>${newQuest[i]}</label>`
   }
