@@ -30,4 +30,3 @@ function getSiblings(element, type) {
       }
     });
   }
-  

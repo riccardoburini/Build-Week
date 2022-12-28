@@ -38,11 +38,11 @@ h4{
 
 .countdown{
     display: inline-block;
-    width: 14.5%;
+    width: 165px;
     border: 35px solid #00FFFF;
-    border-radius: 50%;
+    border-radius: 100%;
     text-align: center;
-    padding: 2.5%;
+    padding: 50px;
 }
 
 .countdown, .correctResult, .wrongResult{

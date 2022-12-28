@@ -160,7 +160,7 @@ function newQuest(){
   removeNodes(container);
   addTask()
   createQuestions(questions[n].incorrect_answers, questions[n].correct_answer);
-  where();
+  bottomCounter();
   clearInterval(mytimer)
   avvia();
 }
@@ -177,7 +177,7 @@ function timerCounter() {
 }
 let mytimer
 
-window.onload = () => {where(), avvia()}
+window.onload = () => {bottomCounter(), avvia()}
 
 function avvia(){
   mytimer = setInterval(timerCounter, 1000)
@@ -187,7 +187,7 @@ function avvia(){
   document.getElementById("contatore").innerHTML = timer
 }
 
-function where() {
+function bottomCounter() {
   let bottomp = document.createElement("p")
   bottomp.innerHTML = `<h3>Question ${n +1} <b> / ${questions.length}<b><h3>`
   document.querySelector(".container").appendChild(bottomp)
