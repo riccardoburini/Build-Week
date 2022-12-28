@@ -1,5 +1,5 @@
 body{
-    font-family: inter;
+    font-family: Inter;
     background-image: url(../assets/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -38,7 +38,7 @@ h4{
 
 .countdown{
     display: inline-block;
-    width: 165px;
+    width: 180px;
     border: 35px solid #00FFFF;
     border-radius: 100%;
     text-align: center;
