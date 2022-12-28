@@ -12,7 +12,7 @@ function getSiblings(element, type) {
     return arraySib;
   }
   for (var i = 1; i <= 10; i++) {
-    document.getElementById("w__stars").innerHTML += `<span class="r__icon"><img class="manImg" src="../assets/blackStar.svg"></img></span>`;
+    document.getElementById("w__stars").innerHTML += `<span class="r__icon"><img src="../assets/star.svg" class="img-hover"><img class="manImg" src="../assets/blackStar.svg"></img></span>`;
   }
   var icon = document.getElementsByClassName("r__icon");
   for (var i = 0; i < icon.length; i++) {

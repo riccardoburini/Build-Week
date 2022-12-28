@@ -57,13 +57,27 @@ main {
   padding: 2% 6%;
   font-size: 130%;
 }
+
 footer {
   margin-top: 8%;
 }
+
 #w__stars img {
   margin-right: 1%;
 }
+
 #w__stars {
   margin-bottom: 9%;
   margin-top: 3%;
+}
+
+.img-hover {
+  display: none;
+  position: absolute;
+}
+
+.r__icon:hover .img-hover {
+  display: inline;
+  border: 3px;
+  
 }
