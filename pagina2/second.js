@@ -104,9 +104,11 @@ const container = document.querySelector('.container');
 
 console.log(questions[0].correct_answer);
 console.log(questions.length);
+
+
 function addTask() {
-  let questionTitle = document.createElement('p')
-  questionTitle.innerHTML += `<h1>${questions[n].question}</h1>`
+  let questionTitle = document.createElement("p")
+  questionTitle.innerHTML = `<h1>${questions[n].question}</h1>`
   document.querySelector(".container").appendChild(questionTitle);
 }
 addTask()
@@ -189,7 +191,7 @@ function avvia(){
 
 function bottomCounter() {
   let bottomp = document.createElement("p")
-  bottomp.innerHTML = `<h3>Question ${n +1} <b> / ${questions.length}<b><h3>`
+  bottomp.innerHTML = `<h3>QUESTION ${n +1} <b> / ${questions.length}</b></h3>`
   document.querySelector(".container").appendChild(bottomp)
 }
 
