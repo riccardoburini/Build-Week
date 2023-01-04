@@ -108,7 +108,7 @@ console.log(questions.length);
 
 function addTask() {
   let questionTitle = document.createElement("p")
-  questionTitle.innerHTML = `<h1 ${onclick="alertMeme()"}>${questions[n].question}</h1>`
+  questionTitle.innerHTML = `<h1 onclick="alertMeme()">${questions[n].question}</h1>`
   document.querySelector(".container").appendChild(questionTitle);
 }
 addTask()
@@ -195,8 +195,8 @@ function bottomCounter() {
   document.querySelector(".container").appendChild(bottomp)
 }
 
-function alertMeme(event) {
-  event.target.alert("Press the Spacebar");
+function alertMeme() {
+  alert("Press the Spacebar");
 }
 
 function setPepeMemes (event) {
