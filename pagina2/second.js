@@ -108,7 +108,7 @@ console.log(questions.length);
 
 function addTask() {
   let questionTitle = document.createElement("p")
-  questionTitle.innerHTML = `<h1>${questions[n].question}</h1>`
+  questionTitle.innerHTML = `<h1 ${onclick="alertMeme()"}>${questions[n].question}</h1>`
   document.querySelector(".container").appendChild(questionTitle);
 }
 addTask()
@@ -195,10 +195,14 @@ function bottomCounter() {
   document.querySelector(".container").appendChild(bottomp)
 }
 
+function alertMeme(event) {
+  event.target.alert("Press the Spacebar");
+}
+
 function setPepeMemes (event) {
   if (event.key === " ") {
     document.querySelector("body").style.backgroundImage = "url(../assets/180712-Weill--The-Creator-of-Pepe-hero_uionjj.jpg)";
-    document.querySelector("body").style.color = "red"
+    document.querySelector("body").style.color = "purple"
   }
 }
 

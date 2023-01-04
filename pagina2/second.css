@@ -8,8 +8,8 @@ body{
     background-size: cover;
     color: white;
     margin:0;
+    height: 100vh;
     text-align: center;
-    max-height: 100%;
     font-family: Inter;
 }
 
@@ -25,7 +25,7 @@ img{
 
 form{
     display: inline;
-    padding-left: 65%;
+    margin-left: 60%;
 }
 
 .countdown{
