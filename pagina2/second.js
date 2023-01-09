@@ -100,6 +100,7 @@ const questions = [
 
 let n = 0
 let sum = 0
+let correctAns = []
 const container = document.querySelector('.container');
 
 console.log(questions[0].correct_answer);
@@ -142,10 +143,11 @@ function removeNodes (container){
 }
 
 function handleFunction(event){
-  if (event.target.innerText === questions[n].correct_answer){sum += 1};
+  if (event.target.innerText === questions[n].correct_answer){correctAns.push(questions[n]) && sum ++;};
   n += 1;
   console.log(n);
   console.log(sum);
+  console.log(correctAns);
   localStorage.setItem("sum", sum)
   localStorage.setItem("max", questions.length)
   newQuest()
@@ -196,7 +198,7 @@ function bottomCounter() {
 }
 
 function alertMeme() {
-  alert("Press the Spacebar");
+  alert("Press the Spacebar to get lucky");
 }
 
 function setPepeMemes (event) {
