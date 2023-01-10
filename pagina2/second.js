@@ -192,7 +192,7 @@ function avvia(){
 }
 
 function bottomCounter() {
-  let bottomp = document.createElement("p")
+  let bottomp = document.createElement("div")
   bottomp.innerHTML = `<h3>QUESTION ${n +1} <b> / ${questions.length}</b></h3>`
   document.querySelector(".container").appendChild(bottomp)
 }
